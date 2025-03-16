@@ -85,15 +85,23 @@ class Prettify:
     def __repr__(self):
         return f"<Prettify {len(self.data)} Objects>"
 
-class PrettyTable:
+class PrettyLine:
+    """For Single Line Alignment toolsets"""
     def __init__(self) -> None:
         self.data = []
         self.max_spacing_default = 10
         self.max_spacing = None
+
     def define_spacing(self, spacing: int):
+        """
+        Predefines a default spacing value that is used on any rows.
+        """
         self.max_spacing = spacing
 
-    def add_line(self, data: str, max_spacing: int = None):
+    def append_text(self, data: str, max_spacing: int = None):
+        """
+        Horizontal alignment of text. Spacing is the maximum amount of spaces consistent throughout regardless of string length, however string length has to be lower than max_spacing count.
+        """
         if (not max_spacing and not self.max_spacing):
             warnings.warn(f"User did not specify max_spacing, defaulted to {self.max_spacing_default}.")
             self.max_spacing = self.max_spacing_default
