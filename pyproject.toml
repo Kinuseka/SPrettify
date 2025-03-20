@@ -41,7 +41,4 @@ dependencies = []
 [project.urls]
 homepage = "https://github.com/Kinuseka/SPrettify"
 
-[tool.setuptools.package-data]
-CFSession = ["py.typed", "*.pyi"]
-
 
