@@ -83,7 +83,8 @@ class Prettify:
         return self.prettystring()
     
     def __repr__(self):
-        return f"<Prettify {len(self.data)} Objects>"
+        d = len(self.state)
+        return f"<Prettify {d} Object{'s' if d > 1 else ''}>"
 
 class PrettyLine:
     """For Single Line Alignment toolsets"""
@@ -126,4 +127,5 @@ class PrettyLine:
         return self.prettystring()
     
     def __repr__(self):
-        return f"<PrettyTable {len(self.data)} Objects>"
+        d = len(self.data)
+        return f"<PrettyTable {d} Object{'s' if d > 1 else ''}>"
